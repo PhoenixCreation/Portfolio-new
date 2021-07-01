@@ -1,0 +1,136 @@
+#logo {
+  animation: slide-up var(--totalDuration) ease forwards;
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(50%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+#Head {
+  transform-origin: 48.33% 29%;
+  transform: rotate(50deg);
+  animation: heads-up var(--totalDuration) ease forwards;
+}
+@keyframes heads-up {
+  to {
+    transform: rotate(0deg);
+  }
+}
+#Tail_upper {
+  transform-origin: 56.33% 49%;
+  transform: rotate(-20deg);
+  animation: tail-upper-rotation var(--totalDuration) ease forwards;
+}
+@keyframes tail-upper-rotation {
+  80% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+#Tail_lower_right,
+#Tail_lower_left {
+  transform-origin: 52% 58.33%;
+}
+#Tail_lower_left {
+  transform: rotate(-20deg);
+  animation: tail-lower-left-rotation var(--totalDuration) ease forwards;
+}
+@keyframes tail-lower-left-rotation {
+  80% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+#Tail_lower_right {
+  transform: rotate(20deg);
+  animation: tail-lower-right-rotation var(--totalDuration) ease forwards;
+}
+@keyframes tail-lower-right-rotation {
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+#Inner_wing_right {
+  transform-origin: 54% 36%;
+  transform: rotate(50deg);
+  opacity: 0;
+  animation: innerwing-right-rotation var(--totalDuration) ease forwards;
+}
+@keyframes innerwing-right-rotation {
+  50% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotate(-12.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+#Outer_wing_right {
+  transform-origin: 54% 36%;
+  transform: rotate(50deg);
+  opacity: 0;
+  animation: outerwing-right-rotation var(--totalDuration) ease forwards;
+}
+@keyframes outerwing-right-rotation {
+  50% {
+    opacity: 1;
+  }
+  82% {
+    transform: rotate(-12.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+#Inner_wing_left {
+  transform-origin: 46.33% 36%;
+  transform: rotate(-50deg);
+  opacity: 0;
+  animation: innerwing-left-rotation var(--totalDuration) ease forwards;
+}
+@keyframes innerwing-left-rotation {
+  50% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotate(12.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+#Outer_wing_left {
+  transform-origin: 46.33% 36%;
+  transform: rotate(-50deg);
+  opacity: 0;
+  animation: outerwing-left-rotation var(--totalDuration) ease forwards;
+}
+@keyframes outerwing-left-rotation {
+  50% {
+    opacity: 1;
+  }
+  82% {
+    transform: rotate(12.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}

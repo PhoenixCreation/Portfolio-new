@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --backgroundColor: #313131;
+  --totalDuration: 2s;
+  --typingDuration: 15s;
+}
+body {
+  background: var(--backgroundColor);
+  display: flex;
+  align-items: center;
+}
+main {
+  min-height: 100vh;
+  display: flex;
+}
+section {
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.heading__cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading {
+  font-family: "Lobster", cursive;
+  color: white;
+  font-size: 2.5rem;
+  opacity: 0;
+  animation: heading 1s ease-in var(--totalDuration) forwards;
+}
+@keyframes heading {
+  from {
+    transform: scale(3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.subheading {
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+  animation: subheading 0.5s ease calc(var(--totalDuration) + 1s) forwards;
+}
+@keyframes subheading {
+  to {
+    opacity: 1;
+  }
+}
+.subheading__prefix {
+  font-family: "open sans";
+  font-size: 1.6rem;
+  color: #eee;
+}
+.subheading__skill__cont {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+.subheading__skill {
+  font-family: "open sans";
+  color: #ddd;
+  font-size: 1.6rem;
+  width: max-content;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+.subheading__skill:nth-child(2) {
+  position: relative;
+}
+.subheading__skill:nth-child(1) {
+  animation: type-skill-1 var(--typingDuration)
+      calc(var(--totalDuration) + 1.5s) forwards infinite,
+    keep-left-0 1s infinite;
+}
+.subheading__skill:nth-child(2) {
+  animation: type-skill-2 var(--typingDuration)
+      calc(var(--totalDuration) + 1.5s) forwards infinite,
+    keep-left-0 1s infinite;
+}
+.subheading__skill:nth-child(3) {
+  animation: type-skill-3 var(--typingDuration)
+      calc(var(--totalDuration) + 1.5s) forwards infinite,
+    keep-left-0 1s infinite;
+}
+@keyframes keep-left-0 {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 0%;
+  }
+}
+.subheading__skill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--backgroundColor);
+  left: 0;
+  z-index: 1;
+}
+.subheading__skill::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 3px;
+  background: white;
+  left: 0;
+  z-index: 2;
+}
+.subheading__skill:nth-child(1):before {
+  animation: type-skill-1 var(--typingDuration)
+    calc(var(--totalDuration) + 1.5s) steps(17) forwards infinite;
+}
+.subheading__skill:nth-child(1):after {
+  animation: blink 750ms ease infinite,
+    type-skill-1 var(--typingDuration) calc(var(--totalDuration) + 1.5s)
+      steps(17) forwards infinite;
+}
+.subheading__skill:nth-child(2):before {
+  animation: type-skill-2 var(--typingDuration)
+    calc(var(--totalDuration) + 1.5s) steps(19) forwards infinite;
+}
+.subheading__skill:nth-child(2):after {
+  animation: blink 750ms ease infinite,
+    type-skill-2 var(--typingDuration) calc(var(--totalDuration) + 1.5s)
+      steps(19) forwards infinite;
+}
+.subheading__skill:nth-child(3):before {
+  animation: type-skill-3 var(--typingDuration)
+    calc(var(--totalDuration) + 1.5s) steps(13) forwards infinite;
+}
+.subheading__skill:nth-child(3):after {
+  animation: blink 750ms ease infinite,
+    type-skill-3 var(--typingDuration) calc(var(--totalDuration) + 1.5s)
+      steps(13) forwards infinite;
+}
+
+@keyframes type-skill-1 {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  0.1% {
+    opacity: 1;
+  }
+  10% {
+    left: 100%;
+  }
+  23% {
+    left: 100%;
+  }
+  32.9% {
+    opacity: 1;
+  }
+  33% {
+    left: 0%;
+    opacity: 0;
+  }
+  100% {
+    left: 0%;
+    opacity: 0;
+  }
+}
+@keyframes type-skill-2 {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  33% {
+    left: 0%;
+    opacity: 0;
+  }
+  33.1% {
+    opacity: 1;
+  }
+  43% {
+    left: 100%;
+  }
+  56% {
+    left: 100%;
+  }
+  65.9% {
+    opacity: 1;
+  }
+  66% {
+    left: 0%;
+    opacity: 0;
+  }
+  100% {
+    left: 0%;
+    opacity: 0;
+  }
+}
+@keyframes type-skill-3 {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  66% {
+    left: 0%;
+    opacity: 0;
+  }
+  66.1% {
+    opacity: 1;
+  }
+  76% {
+    left: 100%;
+  }
+  90% {
+    left: 100%;
+  }
+  99.9% {
+    opacity: 1;
+  }
+  100% {
+    left: 0%;
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
